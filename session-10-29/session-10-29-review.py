@@ -1,5 +1,12 @@
 # Welcome back!
+<<<<<<< HEAD
 import numpy as np
+=======
+
+# write a while loop that prints 1-12 
+
+
+>>>>>>> 4ee90da2d00612c58c82c1c48f5d9dca8abd4228
 # Reviewing While loops:
 # print a while loop that prints 1-12
 
@@ -26,6 +33,10 @@ myset = ['miss', 'cocoa', 'hot', 'mind', 'vibin', 'dime','sweater']
 
 
 # Create a 2D numpy array of size 3x5 with numbers 1-15:
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4ee90da2d00612c58c82c1c48f5d9dca8abd4228
 
 a = np.array([(1, 2, 3, 4, 5), (6, 7, 8, 9, 10), (11, 12, 13, 14, 15)])
 
