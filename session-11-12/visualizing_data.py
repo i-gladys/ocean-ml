@@ -1,8 +1,13 @@
 from netCDF4 import Dataset
 import numpy.ma as ma
+from datetime import date
+from datetime import timedelta
+import matplotlib.pyplot as plt 
+import matplotlib.lines as mlines
+
 
 # import the netcdf file using Dataset
-dataset = Dataset(r'/Users/helenfellow/Documents/InternGit/ocean-ml/session-10-31/ssh_1572470095877.nc')
+dataset = Dataset(r'/Users/brownscholar/Desktop/Git_Hub/ocean-ml/session-10-31/ssh_1572470095877.nc')
 
 # read in and create variable for lat:
 lat = dataset['latitude']
@@ -13,9 +18,9 @@ lon = dataset['longitude']
 # adt:
 adt = dataset['adt']
 
-start_date = date(1950,1,1)
-delta = timedelta(days = int(time[0]))
-observation_date = (start_date+delta).strftime("%m/%d/%Y")
+# start_date = date(1950,1,1)
+# delta = timedelta(days = int(time[0]))
+# observation_date = (start_date+delta).strftime("%m/%d/%Y")
 
 # you will need this:
 BATS_lat_max = 39.453
@@ -68,9 +73,26 @@ while i<1:
 
 
 # write code for global ocean here: 
+whole_ocean = (adt[0,:,:])
+plt.imshow(whole_ocean, origin='lower')
+cbar = plt.colorbar()
 
+plt.xlabel('Latitude')
+plt.ylabel('Longitude')
+plt.title('Under The Sea')
 
 # write code for BATS part here:
+x1,y1 = [lon_index_min,lon_index_max],[lat_index_max,lat_index_max]
+x2,y2 = [lon_index_min,lon_index_max],[lat_index_min,lat_index_min]
+x3,y3 = [lon_index_min,lon_index_min],[lat_index_min,lat_index_max]
+x4,y4 = [lon_index_max,lon_index_max],[lat_index_min,lat_index_max]
 
+plt.plot(x1,y1,x2,y2,x3,y3,x4,y4, color = 'r', linewidth = 1)
 
-print(BATSadt.shape)
+red_lines = mlines.Line2D([], [], color='r',
+                          markersize=15, label='BATS region')
+plt.legend(handles=[red_lines])
+
+plt.xticks(ma.arange(0,1440,200),lon[0::200])
+plt.yticks(ma.arange(0,720,100),lat[0::100])
+plt.show()
