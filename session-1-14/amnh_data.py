@@ -16,6 +16,7 @@ with warnings.catch_warnings():
 
 print('ready') 
 
+#show batch is a function that groups the pictures and labels them by shape which is square
 def show_batch(image_batch, label_batch):
   plt.figure(figsize=(10,10))
   print(label_batch.shape)
@@ -26,15 +27,18 @@ def show_batch(image_batch, label_batch):
       plt.axis('off')
   plt.show()
 
+#Automatically modifies the data
 AUTOTUNE = tf.data.experimental.AUTOTUNE
 
-data_dir = '/Users/helenfellow/Documents/Education /cnn_data'
+#This is our directory path (pwd)
+data_dir = '/Users/brownscholar/Documents/DATA'
 data_dir = pathlib.Path(data_dir)
 
+#Counts the number of images in the data
 image_count = len(list(data_dir.glob('*/*.jpg')))
 print(image_count)
 
-
+#this is a variable that has all of 
 CLASS_NAMES = np.array([item.name for item in data_dir.glob('*') if item.name != ".DS_Store"])
 print(CLASS_NAMES)
 
@@ -42,9 +46,9 @@ seal_1 = list(data_dir.glob('seal_1/*'))
 
 
 image_generator = tf.keras.preprocessing.image.ImageDataGenerator(rescale=1./255)
-BATCH_SIZE = 622
-IMG_HEIGHT = 1024
-IMG_WIDTH = 768
+BATCH_SIZE = 668
+IMG_HEIGHT = 3024
+IMG_WIDTH = 3024
 STEPS_PER_EPOCH = np.ceil(image_count/BATCH_SIZE)
 
 
