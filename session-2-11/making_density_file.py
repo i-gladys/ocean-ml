@@ -5,7 +5,7 @@ import seawater as sw
 dataset = Dataset(r'/Users/brownscholar/Desktop/dataset-armor-3d-rep-weekly_1581373134952.nc')
 
 # first step: iomport the data and get temp, salinity pressure 
-​#pressure = dataset['depth']
+​pressure = dataset['depth']
 temperture = dataset['to']
 salinity = dataset['so']
 
