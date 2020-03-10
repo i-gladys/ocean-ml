@@ -23,14 +23,21 @@ for i in range(0,31):
 	pressure_3d[i,:,:] = np.repeat(pressure[i],80*27).reshape((80,27))
 	#print(pressure_3d[i,:,:])
 	
-density = sw.dens(salinity[0,:,:,:],temperture[0,:,:,:],pressure_3d[:])
-#print(density.shape)
+density = sw.dens(salinity[:,:,:,:],temperture[:,:,:,:],pressure_3d[:])
+print(density.shape)
 
 density_file = open('density_file.txt',"w")
 
-for i in range(0,31): 
-    for j in range(0,80):
-        for c in range(0,27): 
-            print(density[i,j,c])
-            density_file.write(str(density[i,j,c])+'\n')
-density_file.close()
+for k in (0,1356):
+	time = open("time_"+str(k)+".txt","w")
+	for i in range(0,31): 
+		for j in range(0,80):
+			for c in range(0,27): 
+				density_file.write(str(density[k,i,j,c])+'\n')
+	density_file.close()
+
+#
+# for i in range(0,4):
+#     my_file = open("file-"+str(i)+".txt","w")
+#     my_file.write("this file has writing in it\n")
+#     my_file.close()
