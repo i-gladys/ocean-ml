@@ -15,9 +15,7 @@ dynamic_height = dataset['zo']
 def interp(startgrid):
 	num_depths = 30 # to avoid problems with seafloor depth
 	z_step = 10 
-	depth = [10, 20, 30, 50, 75, 100, 125, 150, 200, 250, 300, 400, 500, 600, 
-    700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1750, 2000, 2500, 
-    3000, 3500, 4000, 4500, 5000]
+	depth = [10, 20, 30, 50, 75, 100, 125, 150, 200, 250, 300, 400]
 
 #print(pressure.shape)
 #print(temperture.shape)
@@ -43,25 +41,29 @@ dynamic_height = dynamic_height * 100
 main_density_file = open('density_file.txt',"w")
 start = td.date(1950,1,1)
 
+
 for k in (0,1356):
 	hours = td.timedelta(hours=int(time[i])) 
 	after = start - hours
 	date = after.strftime("%y")+ after.strftime("%m")+ after.strftime("%d")
 	density_time = open("density_time"+str(date)+".txt","w")
 	density_time.write("\t30\n\t80\t27")
-	density_at_time = interp(density[i,:,:,:])
-	dh_interp = interp(dynamic_height)
+	density_at_time = interp(density[i,:12,:,:])
+	dh_interp = interp(dynamic_height[i,:12,:,:])
 	interpheightfile = open('dh_'+ date + '.gr', 'w')
 	for i in range(0,30): 
 		for j in range(0,80):
 			for c in range(0,27): 
 				main_density_file.write(str(density_at_time[i,j,c])+'\n')
+				interpheightfile.write(str(dynamic_height[i,j,c])+'\n')
 
 	main_density_file.close()
+	interpheightfile.close()
 
-	return interp_grid
+	#return interp_grid
  
-#
+#add a pathway where you can open the denisty files which is the marine copernicus and marine dh folders in desktop
+
 # for i in range(0,4):
 #     my_file = open("file-"+str(i)+".txt","w")
 #     my_file.write("this file has writing in it\n")
