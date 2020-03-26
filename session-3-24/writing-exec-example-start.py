@@ -3,6 +3,7 @@ example_date = sys.argv[1]
 # vectorq.exec:
 vectorq_file = open('vectorq.exec',"w")
 vectorq_file.write("#!/bin/csh\n\n")
+vectorq_file.write("set = inder")
 vectorq_file.write("set dir = ./test/\n")
 vectorq_file.write("set fileinfo = {$dir}info_pr.dat\n")
 vectorq_file.write("set filedh =  {$dir}"+sys.argv[1]+".gr\n")
