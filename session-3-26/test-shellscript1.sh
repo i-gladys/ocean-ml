@@ -7,5 +7,8 @@ cd ../Documents
 mkdir UnderdaC02
 pwd
 cd /Users/brownscholar/Desktop/Git_Hub/ocean-ml
-#open popup.py 
+#python popup.py 
 pwd
+cd ../../../
+pwd
+cd Downloads

@@ -1,9 +1,9 @@
 #!/bin/csh
 
-set dir = ./test/
+set = inderset dir = ./test/
 set fileinfo = {$dir}info_pr.dat
-set filedh =  {$dir}200324.gr
-set filest =  {$dir}200324.gr
+set filedh =  {$dir}070504.gr
+set filest =  {$dir}070504.gr
 set filestm = {$dir}ss1_st0.dat
 set filequ =  {$dir}ss1a2qu.gr
 set fileqv =  {$dir}ss1a2qv.gr
