@@ -52,3 +52,4 @@ April 2 | finishing our shell script | [Slides](https://docs.google.com/presenta
 April 7 | converting our data to netcdf file, starting plots | [Slides](https://docs.google.com/presentation/d/1v2KPu8ChbO8H41lt-qfrOsoaNWqExmnIKiy6sZAWzoQ/edit?usp=sharing)
 April 21 | Starting Hovmoller Diagram :-) | [Slides](https://docs.google.com/presentation/d/1qlRekwLJRDLANCHkwlwkWUt_PHbHwnKl3ajqFseu9k4/edit?usp=sharing)
 April 28 | Detailing our Hovmoller Diagrams | [Slides](https://docs.google.com/presentation/d/1KJFl8EMAL5ievwtm5O2WJ4anK_s2k4e0lZR4ZWVLbBo/edit?usp=sharing)
+May 5th | Detailing cont'd | [Slides](https://docs.google.com/presentation/d/1sy_gcSZ0r4iLKZZFCdr5PAhFZRS5WmyErb0e3IkUjAs/edit?usp=sharing)
